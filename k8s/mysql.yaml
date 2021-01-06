@@ -3,7 +3,7 @@ apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
   name: mysql
-  namespace: FORREPLACE1235
+  namespace: $REPO
 spec:
   selector:
     matchLabels:
@@ -43,7 +43,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
-  namespace: FORREPLACE1235
+  namespace: $REPO
   labels:
     app: mysql8
 spec:
@@ -57,7 +57,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql8-service
-  namespace: FORREPLACE1235
+  namespace: $REPO
   labels:
     app: mysql8
 spec:
